@@ -46,7 +46,7 @@ kubectl config view --minify
 aws eks --region eu-west-1 update-kubeconfig --name my-cluster
 kubectl get pods -n timestamps
 kubectl get svc -n timestamps
-then use a27e1aa17e2da405cb6d27a29fa106c8-810966963.eu-west-1.elb.amazonaws.com  to enter details
+then use a27e1aa17e2da405cb6d27a29fa106c8-810966963.eu-west-1.elb.amazonaws.com  to add data onto the database
 
 TO DO
 
