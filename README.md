@@ -49,6 +49,7 @@ kubectl get svc -n timestamps
 then use a27e1aa17e2da405cb6d27a29fa106c8-810966963.eu-west-1.elb.amazonaws.com  to enter details
 
 TO DO
+
 hpa and autoscalling is done but I have to explain how it works.
 
 
