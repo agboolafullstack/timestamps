@@ -5,25 +5,8 @@ The project contains terraform scripts to deploy infrastructure with all the fol
 
 How to use this deployment
 
-On AWS
-
-curl 
-"https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
-unzip awscliv2.zip 
-sudo ./aws/install 
-Step-01-03: Configure AWS Command Line using Security Credentials 
-● Go to AWS Management Console --> Services --> IAM 
-● Select the IAM User: kalyan 
-● Important Note: Use only IAM user to generate Security Credentials. Never ever use Root User. (Highly not recommended) 
-● Click on Security credentials tab 
-● Click on Create access key 
-● Copy Access ID and Secret access key 
-● Go to command line and provide the required details 
-aws configure 
-AWS Access Key ID [None]: ABCDEFGHIAZBERTUCNGG (Replace your creds when prompted) 
-AWS Secret Access Key [None]: uMe7fumK1IdDB094q2sGFhM5Bqt3HQRw3IHZzBDTm (Replace your creds when prompted) 
-Default region name [None]: us-east-1 
-Default output format [None]: json 
+On AWS cloudshell
+assuming aws cli is configured
 
 KUBECTL install 
 curl -o kubectl 
@@ -45,6 +28,19 @@ eksctl get cluster
 eksctl get nodegroup --cluster=<clusterName> 
 # List Nodes in current kubernetes cluster 
 kubectl get nodes -o wide 
-# Our kubectl context should be automatically changed to new cluster kubectl config view --minify
+  aws eks --region eu-west-1 update-kubeconfig --name my-cluster
+
+# kubectl context should be automatically changed to new cluster 
+kubectl config view --minify
+aws eks --region eu-west-1 update-kubeconfig --name my-cluster
+kubectl get pods -n timestamps
+kubectl get svc -n timestamps
+then use a27e1aa17e2da405cb6d27a29fa106c8-810966963.eu-west-1.elb.amazonaws.com  to enter details
+
+TO DO
+hpa and autoscalling is done but I have to explain how it works.
+
+
+
   
   
