@@ -30,16 +30,17 @@ install Eksctl
 curl --silent --location 
 "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp 
 sudo mv /tmp/eksctl /usr/local/bin 
-Test that your installation was successful with the following command. eksctl version 
+Test that your installation was successful with this command. eksctl version 
 
 List Worker Nodes 
 # List EKS clusters 
 eksctl get cluster 
 # List NodeGroups in a cluster 
-eksctl get nodegroup --cluster=<clusterName> 
+eksctl get nodegroup --cluster=<my-cluster 
 # List Nodes in current kubernetes cluster 
+aws eks --region eu-west-1 update-kubeconfig --name my-cluster
 kubectl get nodes -o wide 
-  aws eks --region eu-west-1 update-kubeconfig --name my-cluster
+  
 
 # kubectl context should be automatically changed to new cluster 
 kubectl config view --minify
