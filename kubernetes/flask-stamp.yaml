@@ -31,3 +31,9 @@ spec:
               secretKeyRef:
                 name: stamp-secret 
                 key: db_root_password
+                
+          resources:
+            requests:
+              cpu: 500m
+            limits:
+              cpu: 2000m
